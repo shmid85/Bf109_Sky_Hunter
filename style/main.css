@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    height: 100%;
+}
+
+html{
+    overflow: hidden;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+.drawAreaEarthContainer{
+     flex: 1 0 auto;
+}
+
+.drawAreaEarthContainer{
+    flex: 0 0 auto;
+    height: 20%;
+}
