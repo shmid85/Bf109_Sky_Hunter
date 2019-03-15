@@ -5,7 +5,7 @@
 function MainGameDrawer() {
     var mainContainer, canvasDrawAreaSky, drawAreaEarthContainer, canvasDrawAreaEarth;
     this.earthFieldWidth = document.getElementById("drawAreaEarthContainer").clientWidth;
-    this.earthFieldHeight = document.getElementById("drawAreaEarthContainer").clientHeight+2;
+    this.earthFieldHeight = document.getElementById("drawAreaEarthContainer").clientHeight+4;
     this.gameFieldWidth = document.documentElement.clientWidth;
     this.gameFieldHeight = document.documentElement.clientHeight - this.earthFieldHeight;
 
@@ -48,38 +48,40 @@ MainGameDrawer.prototype = {
         this.drawAreaSky.fillRect(0, 0,  this.gameFieldWidth, this.gameFieldHeight);
     },
 
-    // drawVisibleObjects : function (x, y) {
-    //     if(!arguments.length) {
-    //         var self = this;
-    //         self._bf109Image.imageObject.onload = function () {
-    //             self.drawAreaSky.drawImage(self._bf109Image.imageObject, 0, 200, self.gameFieldWidth / 8, self.gameFieldHeight / 10);
-    //         }
-    //     }
-    // },
+    drawVisibleObjects : function (visibleObject) {
+        if(!arguments.length) {
 
+        }
+    },
 
-    // drawBf : function () {
-    //     var self =this, deltaX = 0;
-    //     setInterval(function () {
-    //         self.drawSkyMap();
-    //         self._bf109Image.onload = self.drawAreaSky.drawImage(self._bf109Image, deltaX-250, 200, self.gameFieldWidth / 8, self.gameFieldHeight / 10);
-    //         deltaX +=1;
-    //         if(deltaX > self.gameFieldWidth ) deltaX =0;
-    //
-    //     },50);
-    // };
-
-
-drawBf : function () {
-    var self =this, deltaX = 0;
-    setInterval(function () {
+    drawBf : function () {
+        var self =this, deltaX = 0;
+        setInterval(function () {
         self.drawSkyMap();
-        self.bf109e3_yellow.imageObject.onload = self.drawAreaSky.drawImage(self.bf109e3_yellow.imageObject, deltaX-250, 200, self.gameFieldWidth / 8, self.gameFieldHeight / 10);
-        deltaX +=1;
-        if(deltaX > self.gameFieldWidth ) deltaX =0;
-    },50);
-}
+        self.bf109e3_yellow.imageObject.onload = self.drawAreaSky.drawImage(self.bf109e3_yellow.imageObject, deltaX-250, 350, self.gameFieldWidth / 8, self.gameFieldHeight / 10);
+            deltaX +=1;
+            if(deltaX > self.gameFieldWidth ) deltaX =0;
+        },5);
+    },
 
+    drawLogo : function () {
+        var wrapper, startButton;
+        wrapper=document.getElementById("wrapper");
+        wrapper.className = "wrapperStart";
+        startButton = document.createElement("span");
+        startButton.id = "startButton";
+        startButton.className = "startButton";
+        wrapper.appendChild(startButton);
+        startButton.addEventListener("click", startButtonHandler);
+    },
+
+    removeLogo : function () {
+        var wrapper, startButton;
+        wrapper=document.getElementById("wrapper");
+        wrapper.className = "wrapper";
+        startButton = document.getElementById("startButton");
+        startButton.parentNode.removeChild(startButton);
+    }
 
 };
 

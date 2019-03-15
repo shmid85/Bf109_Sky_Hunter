@@ -25,3 +25,28 @@ html{
     flex: 0 0 auto;
     height: 20%;
 }
+
+.wrapperStart{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-image: url(../img/startLogo.jpg);
+    background-color: lawngreen;
+    background-size: cover;
+    position: fixed;
+}
+
+.startButton{
+    width: 10%;
+    height: 10%;
+    background-image: url(../img/startButton.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top:90%;
+    right: 45%;
+}
+.startButton:hover{
+    background-image: url(../img/startButtonOn.png);
+    background-repeat: no-repeat;
+}

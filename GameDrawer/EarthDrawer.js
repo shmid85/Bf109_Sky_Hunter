@@ -9,10 +9,11 @@ EarthDrawer.prototype = {
     constructor : EarthDrawer,
     drawEarth : function (speed, earthImage, width, height, drawArea, backgroundColor) {
         var delta=0;
+        MainGameDrawer.prototype.removeLogo();
         this.timerID = setInterval(function () {
             EarthDrawer.prototype.drawSkyMapBehindEarth(drawArea, width ,height);
-            drawArea.drawImage(earthImage, delta, 0);
-            drawArea.drawImage(earthImage, earthImage.width-Math.abs(delta), 0);
+            drawArea.drawImage.onload = drawArea.drawImage(earthImage, delta, 0);
+            drawArea.drawImage.onload = drawArea.drawImage(earthImage, earthImage.width-Math.abs(delta), 0);
             if(Math.abs(delta) > earthImage.width) delta =0;
             delta -= 1;
         }, speed);
