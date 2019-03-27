@@ -31,7 +31,6 @@ html{
     flex-direction: column;
     height: 100%;
     background-image: url(../img/startLogo.jpg);
-    background-color: lawngreen;
     background-size: cover;
     position: fixed;
 }
