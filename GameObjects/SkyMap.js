@@ -29,7 +29,7 @@ SkyMap.prototype = {
             throw new TypeError("Argument isn't MapCell object");
         };
 
-        if(mapCell.x <0 || mapCell.y <0 || mapCell.x >= this.columnNum || mapCell.y >= this.rowNum) {
+        if(mapCell.xIndex <0 || mapCell.yIndex <0 || mapCell.xIndex >= this.columnNum || mapCell.yIndex >= this.rowNum) {
             return false;
         };
 
